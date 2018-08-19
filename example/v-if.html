@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HelloWorld</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-if&v-else&v-show</h1>
+	<hr>
+	<div id="app">
+		<!-- <div v-if="isLogin">你好，JSPang</div> -->
+		<!-- <div v-else>请登录</div> -->
+		<!-- v-show主要用来修改样式中的属性等，减少服务器压力 -->
+		<div v-show="isLogin">你好，JSPang</div> 
+	</div>
+
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'#app',	
+			data:{
+				isLogin:false
+			}
+		})
+	</script>
+</body>
+</html>
