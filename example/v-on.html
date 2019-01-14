@@ -14,6 +14,7 @@
 			<button v-on:click="jiafen">加分</button>
 			<button @click="jianfen">减分</button><br/>
 			<input type="text" v-on:keyup.13="onEnter" v-model="fenshu2">
+			// keyup可以绑定相关的键盘事件，用键盘码即可
 		</p>
 	</div>
 
@@ -25,6 +26,7 @@
 				fenshu2:1,
 			},
 			methods:{
+				//对应的方法，这里可以写很多方法
 				jiafen:function(){
 					this.fenshu++;
 				},
@@ -33,6 +35,7 @@
 				},
 				onEnter:function(){
 					this.fenshu=this.fenshu+parseInt(this.fenshu2);
+					// 这里要注意拼接与相加的区别
 				}
 			}
 		})

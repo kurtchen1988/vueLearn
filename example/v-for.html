@@ -16,7 +16,7 @@
 		</ul>
 		<hr>
 		<ul>
-			<li v-for="(student,index) in students">
+			<li v-for="(student,index) in sortStudents">
 				{{index+1}}:{{student.name}}-{{student.age}}
 			</li>
 		</ul>
@@ -34,9 +34,13 @@
 					{name:'King', age:14}
 				]
 			},
+			// 在输出之前进行的计算
 			computed:{
 				sortItems:function(){
-					return this.items.sort();
+					//这里有个保护机制，如果需要给data下面的数据变值，必须重新命名
+					return this.items.sort(sortNumber);
+					//这里排序不会根据大小排序，只会根据首位数字排序。如果这里想正常排序，必须自己定义一个排序方法。
+					//这个缺陷是所有的js程序的缺陷
 				},
 				sortStudents:function(){
 					return sortByKey(this.students,'age');
@@ -44,10 +48,12 @@
 			}
 		});
 		function sortNumber(a,b){
+			//自定义排序方法
 			return a-b;
 		};
 
 		function sortByKey(array,key){
+			//数组对象的排序方法
 			return array.sort(function(a,b){
 				var x=a[key];
 				var y=b[key];

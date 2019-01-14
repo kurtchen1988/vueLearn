@@ -10,7 +10,9 @@
 	<hr>
 	<div id="app">
 		<span>{{message}}</span>=<span v-text="message"></span><br/>
+		<!-- 这里用{{}}会有一定的问题，当网速慢或者js有问题的时候，会显示出有问题的符号 -->
 		<span v-html="dodo"></span>
+		<!-- 避免用这种内嵌html的方式写，为了防止xxs攻击-->
 	</div>
 
 	<script type="text/javascript">
