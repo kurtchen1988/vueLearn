@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue.extend扩展实例构造器</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>Vue.extend扩展实例构造器</h1>
+<hr>
+<div id="author"></div>
+<author></author>
+
+<script type="text/javascript">
+    var authorURLa = Vue.extend({
+        template:"<p><a :href='authorURL'>{{authorName}}</a></p>",
+        data:function () {
+            return {
+                authorName:"jspang",
+                authorURL:"http://jspang.com"
+            }
+        }
+    });
+
+    new authorURLa().$mount("#author");
+    new authorURLa().$mount("author");
+    // 这里如果是id的绑定就用"#author"，如果是class的绑定就用".author"。尽量避免用tag来渲染
+</script>
+</body>
+</html>

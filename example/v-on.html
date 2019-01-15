@@ -12,9 +12,10 @@
 		本场比赛得分：{{fenshu}}
 		<p>
 			<button v-on:click="jiafen">加分</button>
+			<!-- 绑定事件，实现监听 -->
 			<button @click="jianfen">减分</button><br/>
 			<input type="text" v-on:keyup.13="onEnter" v-model="fenshu2">
-			// keyup可以绑定相关的键盘事件，用键盘码即可
+			<!-- keyup可以绑定相关的键盘事件，用键盘码即可 -->
 		</p>
 	</div>
 
