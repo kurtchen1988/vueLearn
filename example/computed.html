@@ -9,16 +9,19 @@
 <h1>computed option</h1>
 <hr>
 <div id="app">
-    {{newPrice}}
+    <p>{{newPrice}}</p>
+    <ul>
+        <li v-for="item in reverseNews">{{item.title}}-{{item.date}}</li>
+    </ul>
 </div>
 
 <script type="text/javascript">
 
     var newsList = [
-        {title:"与自定义元素的关系",data:"2019/1/3"},
-        {title:"组件化应用构建",data:"2019/1/3"},
-        {title:"处理用户输入",data:"2019/1/3"},
-        {title:"条件与循环",data:"2019/1/3"},
+        {title:"与自定义元素的关系",date:"2019/1/3"},
+        {title:"组件化应用构建",date:"2019/1/4"},
+        {title:"处理用户输入",date:"2019/1/5"},
+        {title:"条件与循环",date:"2019/1/6"},
     ]
 
     var app = new Vue({
@@ -30,6 +33,9 @@
         computed:{
             newPrice:function () {
                 return this.price="$"+this.price+"美元";
+            },
+            reverseNews:function () {
+                return this.newsList.reverse();
             }
         }
     })
