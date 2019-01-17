@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>HelloWorld</h1>
+<hr>
+<div id="app">
+    <jspang>
+        <span slot="blogUrl">{{jspangData.blogUrl}}</span>
+        <span slot="netName">{{jspangData.netName}}</span>
+        <span slot="skill">{{jspangData.skill}}</span>
+        <!-- 在标签里要用key和value的形式写出 -->
+    </jspang>
+</div>
+
+<template id="tep">
+    <div>
+    <p>博客地址：<slot name="blogUrl"></slot></p>
+    <p>网名：<slot name="netName"></slot></p>
+    <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+    <!-- 在模板里要接受数值 -->
+</template>
+
+<script type="text/javascript">
+    var jspang = {
+        template:"#tep"
+    }
+    var app = new Vue({
+        el:'#app',
+        data:{
+            jspangData:{
+                blogUrl:"http://jspang.com",
+                netName:"技术胖",
+                skill:"web前端"
+            }
+        },
+        components:{
+            "jspang":jspang
+        }
+    })
+</script>
+</body>
+</html>
