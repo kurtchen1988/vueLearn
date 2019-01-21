@@ -32,6 +32,18 @@ export default new Router({
         {path:'hi1', name:'hi1', component:Hi1},
         {path:'hi2', name:'hi2', component:Hi2},
       ]
+    },
+    {
+      path: '/jspang',
+      name: 'Hello',
+      //component: HelloWorld
+      components: {
+        //多个的时候需要写复数
+        default: HelloWorld,
+        left: hh2,
+        right: hh1
+
+      }
     }
   ]
 })

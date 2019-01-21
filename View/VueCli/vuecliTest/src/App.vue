@@ -13,7 +13,7 @@
 
     <router-view></router-view>
     <router-view name="left" style="float:left;width: 50%;height: 300px;background-color: #ccc;"></router-view>
-    <router-view name="right" style="float:left;width: 50%;height: 300px;background-color: #ccc;"></router-view>
+    <router-view name="right" style="float:left;width: 50%;height: 300px;background-color: #c0c;"></router-view>
   </div>
 </template>
 
